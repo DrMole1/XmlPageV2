@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HttpRequest</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<textarea id="xmlArea" name="xmlArea" rows="20" cols="50"></textarea>
+	<textarea id="titresEleves" name="titresEleves" rows="20" cols="50"></textarea>
+	<textarea id="infosEleves" name="infosEleves" rows="20" cols="200"></textarea>
+
+	<button onclick="loadData();">clic</button>
+
+	<script type="text/javascript">
+		function loadData(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+    		if (this.readyState == 4 && this.status == 200) {
+       			let response = xhttp.responseText;
+				let responseXML = xhttp.responseXML;
+
+				//let container = document.getElementById('container');
+				//container.innerHTML = response;
+
+
+				let nomData = responseXML.getElementsByTagName("nom");
+				let prenomData = responseXML.getElementsByTagName("prenom");
+				let ageData = responseXML.getElementsByTagName("age");
+				let niveauData = responseXML.getElementsByTagName("niveau");
+				let domicileData = responseXML.getElementsByTagName("domicile");
+				let telephoneData = responseXML.getElementsByTagName("telephone");
+
+				let titres = "";
+            	let infos = "";
+
+				for (let index = 0; index < nomData.length; index++) {
+
+                	const element = nomData[index];
+                	const element2 = prenomData[index];
+                	const element3 = ageData[index];
+                	const element4 = niveauData[index];
+                	const element5 = domicileData[index];
+                	const element6 = telephoneData[index];
+
+                	titres = titres + element.innerHTML + "\n";
+                	infos = infos + "Nom : " + element.innerHTML + " Prenom : " + element2.innerHTML + " Age : " + element3.innerHTML + " Niveau : " + element4.innerHTML + " Domicile : " + element5.innerHTML + " Telephone : " + element6.innerHTML +"\n";
+            	}
+            	document.getElementById("xmlArea").innerHTML = response;
+            	document.getElementById("titresEleves").innerHTML = titres;
+            	document.getElementById("infosEleves").innerHTML = infos;
+    		}	
+		};
+		xhttp.open("GET", "Eleves.xml", true);
+		xhttp.send(); 
+		}
+
+	</script>
+
+</body>
+</html>

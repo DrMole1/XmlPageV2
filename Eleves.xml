@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eleves>
+	<eleve id="1">
+		<nom>Prob</nom>
+		<prenom>Bastien</prenom>
+		<age>20</age>
+		<niveau>Master1</niveau>
+		<domicile>14 rue du Faubourg National</domicile>
+		<telephone>07 82 33 20 10</telephone>
+	</eleve>
+	<eleve id="2">
+		<nom>Dupont</nom>
+		<prenom>Boris</prenom>
+		<age>21</age>
+		<niveau>Master2</niveau>
+		<domicile>18 rue des Pins</domicile>
+		<telephone>06 20 76 76 82</telephone>
+	</eleve>
+	<eleve id="3">
+		<nom>Muller</nom>
+		<prenom>Kevin</prenom>
+		<age>19</age>
+		<niveau>Bachelor</niveau>
+		<domicile>10 rue des Acacias</domicile>
+		<telephone>06 56 72 87 02</telephone>
+	</eleve>
+</eleves>
